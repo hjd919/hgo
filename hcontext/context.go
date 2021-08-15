@@ -1,4 +1,4 @@
-package gom
+package hcontext
 
 import (
 	"context"
@@ -13,7 +13,7 @@ var (
 	Context     = ctx
 )
 
-func init() {
+func Setup() {
 	signal.Notify(sig, syscall.SIGHUP, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT, syscall.SIGUSR1, syscall.SIGUSR2)
 	go func() {
 		for si := range sig {
